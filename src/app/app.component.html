@@ -1,0 +1,49 @@
+<!-- AGGIUNGI O CERCA SPETTACOLO -->
+<div *ngIf="show_el.search_add_spettacolo">
+    <h2>Cerca o aggiungi spettacolo:</h2>
+
+    <div id="cerca">
+        <input type="search" id="testo_cerca" placeholder="Cerca spettacolo..." #cerca (keyup.enter)="cerca_spettacolo(cerca.value); cerca.value = ''">
+        <button type="submit" id="btn_cerca" (click)="cerca_spettacolo(cerca.value); cerca.value = ''">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="icona_cerca" width="23px">
+        </button>
+    </div>
+
+    <app-newteatro (new_teatro_event)="push_spettacolo($event); show_el.lista_spettacoli = true"></app-newteatro>
+</div>
+
+<!-- LISTA SPETTACOLI -->
+<div *ngIf="show_el.lista_spettacoli && lista_teatri.length !== 0">
+    <h3 style="margin: 25px 0 5px">Lista spettacoli:</h3>
+
+    <ul style="margin: 5px 0 25px">
+        <li *ngFor="let teatro of lista_teatri" style="margin: 0 0 3px">
+            <button (click)="cerca_spettacolo(teatro); info_prenotazione = ''; show_el.add_nome = true">{{teatro}}</button>
+        </li>
+    </ul>
+</div>
+
+<!-- INSERISCI NOME -->
+<h3 *ngIf="chiave_teatro" style="margin: 20px 0 5px">Hai selezionato lo spettacolo {{chiave_teatro}}</h3>
+<app-add-nome *ngIf="show_el.add_nome" (add_nome_event)="utente = $event; info_prenotazione = ''"></app-add-nome>
+
+<!-- TEATRO -->
+<main *ngIf="chiave_teatro">
+    <h4 *ngIf="utente">Prenota posto per {{utente}}:</h4>
+
+    <p *ngIf="info_prenotazione" id="info_prenotazione">{{info_prenotazione}}</p>
+
+    <div id="palcoscenico">
+        <h3 style="color:#000; font-family: 'Lato'">Palcoscenico</h3>
+    </div>
+
+    <div id="platea" style="margin-bottom: 20px">
+        <div *ngFor="let righe_PL of platea; index as i">
+            <button type="button" class="posti" *ngFor="let posto_PL of righe_PL; index as j" (click)="mostra_prenotazione(posto_PL, i, j, platea)" style="background:{{cambia_colore(posto_PL)}}">P{{i+1}}-{{j+1}}</button>
+        </div>
+    </div>
+
+    <div *ngFor="let riga_PA of palchetto; index as i" class="palchetto">
+        <button type="button" class="posti" *ngFor="let posto_PA of riga_PA; index as j" (click)="mostra_prenotazione(posto_PA, i, j, palchetto)" style="background:{{cambia_colore(posto_PA)}}">P{{i+1}}-{{j+1}}</button>
+    </div>
+</main>

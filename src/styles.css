@@ -1,0 +1,143 @@
+* {
+  font-family: 'Grandstander';
+  font-weight: 400;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.7) 100%), url(https://st.ilfattoquotidiano.it/wp-content/uploads/2020/10/06/Teatro-Cilea-tagliato-.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 3em;
+  color: rgb(213, 30, 30);
+  margin-bottom: 3%;
+}
+
+h2 {
+  font-weight: 700;
+  margin: 0 30% 1%;
+  border-bottom: #fd3459 solid 3px;
+}
+
+h2,
+h3,
+h4 {
+  color: rgb(213, 30, 30);
+}
+
+#cerca {
+  width: 180px;
+  margin: 0 auto 1%;
+  padding: 1px;
+  background: rgb(255, 255, 255, .6);
+  border-radius: 20px;
+  transition: .5s;
+}
+
+#cerca:hover {
+  padding: 3px;
+}
+
+#testo_cerca {
+  width: 140px;
+  margin: 3px;
+  padding: 5px 2px;
+  float: left;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+#btn_cerca {
+  width: 30px;
+  height: 30px;
+  padding: 3px 0;
+  background-color: rgb(255, 255, 255, .2);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#testo_cerca:active,
+#btn_cerca:active {
+  border: solid 1px rgba(105, 105, 105, .7);
+}
+
+ul {
+  list-style-position: inside;
+  color: red;
+}
+
+input:not(#testo_cerca),
+button {
+  padding: 6px 9px;
+  border: none;
+}
+
+input:not(#testo_cerca) {
+  background: rgb(255, 255, 255, .6);
+  margin: 0 8px;
+  outline: none;
+  border-radius: 6px;
+  transition: ease-out .3s;
+}
+
+input:hover:not(#testo_cerca) {
+  padding: 8px 11px;
+  border-radius: 8px;
+}
+
+button {
+  background: rgb(255, 255, 255);
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+button:hover {
+  background: rgb(200, 200, 200);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#info_prenotazione {
+  margin: 1% 35% .5%;
+  padding: 3px 0;
+  background: rgb(255, 255, 255, .7);
+  border-radius: 10px;
+  transition: .1s;
+}
+
+#palcoscenico {
+  margin: .5% 35% 1%;
+  padding: 20px 10px;
+  background: rgb(188, 141, 39);
+}
+
+.posti {
+  font-family: 'Lato';
+  margin: 10px 5px;
+  padding: 7px 2px 1px;
+  border-radius: 50px 50px 0 0;
+  border: none;
+  outline: 1px solid #000;
+  cursor: pointer;
+}
+
+.posti:hover {
+  outline: 2px solid #fff;
+}
+
+.posti:active {
+  box-shadow: 0px 0px 5px 5px rgba(134, 18, 18, 0.5);
+}
+
+::selection {
+  color: #fff;
+  background: #fd3459;
+}

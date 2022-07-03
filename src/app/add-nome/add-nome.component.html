@@ -1,0 +1,2 @@
+<input type="search" placeholder="Inserisci nome..." size="15" #add (keyup.enter)="nuovo_spettacolo(add.value); add.value=''" />
+<button (click)="nuovo_spettacolo(add.value); add.value=''">Prenota</button>
