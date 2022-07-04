@@ -8,7 +8,7 @@ import { teatro_service } from './teatro.service';
 })
 
 export class app_component {
-  title = "Sviluppo-dei-servizi-web";
+  title: string = "Sviluppo-dei-servizi-web";
   lista_teatri: string[] = [];
   platea: any[] = []; palchetto: any[] = [];
   chiave_teatro: string = '';

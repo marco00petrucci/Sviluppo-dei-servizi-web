@@ -7,4 +7,4 @@ Realizzazione di una piccola applicazione per la prenotazione di posti in un tea
 
 Le prenotazioni per un certo spettacolo sono conservate in un database esterno di tipo key-value come una stringa JSON.
 
-Il progetto è realizzato in Angular 13+
+Il progetto è realizzato in Angular 14+
